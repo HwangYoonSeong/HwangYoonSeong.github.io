@@ -6,15 +6,13 @@ const Header = styled.header`
     position:fixed;
     width:100%;
     padding: 0 100px;
-    background-color: ${props => props.current ? "#fff" : "transparent"};
+    background-color: ${props => props.current ? "#fff" : "#fff"};
     transition: all .1s linear;
-    box-shadow: ${props => props.current ? "0px 1px 5px 2px rgba(200,200,200, 0.8)" : "none"};
     z-index:2;
     @media (max-width: 994px){
         padding: 0;
         background-color: rgb(20,20,20);
         color: #fff;
-        box-shadow: 0px 1px 5px 2px rgba(200,200,200, .8);
     }
 `;
 

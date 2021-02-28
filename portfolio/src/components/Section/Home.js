@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import img from '../../assets/Home.png'
+//import img from '../../assets/homeImg.jpg'
 
 
 const blink = keyframes`
@@ -15,31 +15,32 @@ const blink = keyframes`
 const Container = styled.div`
     position:relative;
     width:100%;
-    height:calc(100vh - 5rem) ;
+    height:calc(100vh - 2rem) ;
+    color:white;
     @media(max-width: 994px){
-        height: 70vh;  
+        height: 85vh;  
     }
 `;
 const Background = styled.div`
     width: 100%;
     height: 100%;
-    background-image: url(${img});
+     
     background-position: center center;
     background-size: cover;
-    filter: blur(3px);
-    opacity: 0.5;
+    
 `;
 const TitleContainer = styled.div`
     position:absolute;
-    top:45%;
+    top:55%;
     left:50%;
     transform: translate( -50%, -50%);
     background: transparent -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0)) repeat scroll 0 0;
     line-height:1.5;
+     
 
 `;
 const Title = styled.h2`
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight:600;
     white-space:nowrap;
     @media(min-width:540px) and (max-width: 994px){
@@ -51,9 +52,9 @@ const Title = styled.h2`
 
 `;
 const SubTitle = styled.h3`
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight:600;
-    color:rgba(20,20,20, .6);
+    
     white-space: nowrap;
     @media(min-width:540px) and (max-width: 994px){
         font-size: 2rem;   

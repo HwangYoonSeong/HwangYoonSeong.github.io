@@ -73,7 +73,7 @@ const CardContent = styled.div`
     flex: 1;
     padding: 60px 0 30px 30px;
     background-color:#fff;
-    z-index:2;
+    z-index:1;
     line-height:2;
     @media(max-width: 994px){
         padding: 5px 20px 0 20px;
