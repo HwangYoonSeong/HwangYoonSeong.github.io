@@ -6,13 +6,13 @@ const Header = styled.header`
     position:fixed;
     width:100%;
     padding: 0 100px;
-    background-color: ${props => props.current ? "rgb(20,20,20)" : "transparent"};
+    background-color:  #fff;
     transition: all .1s linear;
     z-index:1;
-    color: #fff;
+    color: rgb(20,20,20);
     
     @media (max-width: 994px){
-        padding: 10px;
+        padding: 6px;
         z-index:2;
         
     }
@@ -28,7 +28,7 @@ const HeaderWrap = styled.nav`
 const Button = styled.button`
     border:none;
     background:none;
-    color:#fff;
+    color:#27ae60;
     display: none;
     outline:none;
     margin-right: 30px;
@@ -79,6 +79,7 @@ const Item = styled.li`
         display:block;
         width: 100%;
         border-bottom: none;
+        background-color: rgba(225,225,225, .90);
         text-align:center;
         &:hover{
             color:#fff;
@@ -111,7 +112,7 @@ export default ({ pos, home, about, skill, project, toggleBtn, isClickList }) =>
     <Header current={pos > 0}>
         <HeaderWrap>
             <Logo>
-                <span style={{ color: "#27ae60" }}>Yoon</span>castle
+                <span style={{ color: "#27ae60", fontWeight: "bold" }}>Yoon</span>castle
             </Logo>
             <MobCover />
             <Button onClick={toggleBtn}>{isClickList ? <FontAwesomeIcon icon="times" size="2x" /> : <FontAwesomeIcon icon="bars" size="2x" />} </Button>

@@ -3,14 +3,6 @@ import styled, { keyframes } from 'styled-components';
 //import img from '../../assets/homeImg.jpg'
 
 
-const blink = keyframes`
-    0%{
-        opacity: 0;
-    }
-    100{
-        opacity: 1;
-    }
-`;
 
 const Container = styled.div`
     position:relative;
@@ -21,20 +13,11 @@ const Container = styled.div`
         height: 85vh;  
     }
 `;
-const Background = styled.div`
-    width: 100%;
-    height: 100%;
-     
-    background-position: center center;
-    background-size: cover;
-    
-`;
 const TitleContainer = styled.div`
     position:absolute;
     top:55%;
     left:50%;
     transform: translate( -50%, -50%);
-    background: transparent -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.075), rgba(0, 0, 0, 0)) repeat scroll 0 0;
     line-height:1.5;
      
 
@@ -51,30 +34,59 @@ const Title = styled.h2`
     }
 
 `;
+
+
+const typingAni = keyframes`
+0%{width:0%}
+100%{width: 850px}
+`;
+
+
+const cursor = keyframes`
+0%{opacity:0;}
+50%{opacity:1;}
+100%{opacity:0;}
+`;
+
 const SubTitle = styled.h3`
     font-size: 3rem;
     font-weight:600;
-    
-    white-space: nowrap;
+    position:relative;
+    display: inline-block;
+    height: 80px;
+    width:850px; 
+    overflow: hidden;
+    animation: ${typingAni} 4s steps(30, end) 1;
+
+    &:after{
+        position:absolute; 
+        display:block;
+        content:""; 
+        width: 30px; 
+        height: 50px;
+        top : 15px;
+        right:0; 
+        border-right: 5px solid #fff;
+        animation: ${cursor} 0.5s infinite;
+    }
+
     @media(min-width:540px) and (max-width: 994px){
         font-size: 2rem;   
     }
     @media(max-width:540px){
         font-size: 1.3rem;
     }
+    
 `;
 
-const Underbar = styled.span`
-    animation: ${blink} 1s infinite;
-`;
+
 
 
 export default () => (
     <Container id="Home" >
-        <Background />
         <TitleContainer>
-            <Title>Hello World!!!</Title>
-            <SubTitle>Developer 황윤성의 포트폴리오 입니다.</SubTitle>
+
+            <SubTitle>Developer 황윤성의 포트폴리오 입니다</SubTitle>
 
         </TitleContainer>
     </Container>
