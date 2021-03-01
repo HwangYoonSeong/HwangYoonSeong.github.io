@@ -6,19 +6,21 @@ const Header = styled.header`
     position:fixed;
     width:100%;
     padding: 0 100px;
-    background-color: ${props => props.current ? "#fff" : "#fff"};
+    background-color: ${props => props.current ? "rgb(20,20,20)" : "transparent"};
     transition: all .1s linear;
-    z-index:2;
+    z-index:1;
+    color: #fff;
+    
     @media (max-width: 994px){
-        padding: 0;
-        background-color: rgb(20,20,20);
-        color: #fff;
+        padding: 10px;
+        z-index:2;
+        
     }
 `;
 
 const HeaderWrap = styled.nav`
     display: flex;
-    position:relative;
+     
     justify-content:space-between;
     height: 60px;
     
@@ -77,7 +79,6 @@ const Item = styled.li`
         display:block;
         width: 100%;
         border-bottom: none;
-        background-color: rgba(20,20,20, .95);
         text-align:center;
         &:hover{
             color:#fff;
@@ -97,7 +98,7 @@ const MobCover = styled.div`
     position:absolute;
     width:100%;
     height:100%;
-    background-color: rgb(20,20,20);
+     
     display:none;
     z-index:1;
     @media (max-width: 994px){

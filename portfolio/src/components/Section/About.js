@@ -5,19 +5,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const Container = styled.article`
-    width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 30px auto;
     padding: 80px 0 ;
+    background-color:white;
+    z-index:1;
     @media (max-width: 1219px) {
+         
         width: 100%;
+    }
+    @media(max-width: 994px){
+        margin-top: 50px;
     }
 `;
 
 const Title = styled.h2`
+    margin-left:200px;
     font-size: 3rem;
     font-weight: 600;
     color: #27ae60;
     @media(max-width: 994px){
+        margin-left:0px;
         text-align:center;
     }
 `;

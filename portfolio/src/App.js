@@ -21,18 +21,23 @@ const Container = styled.div`
   background-attachment:fixed;
   background-image:url("https://www.wallpapertip.com/wmimgs/83-838348_huge-lines-of-code.jpg");
   background-size: cover;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  transform: scale(1.05);
+  z-index:-1;
 `;
+
+
 
 class App extends Component {
   render () {
     return (
       <div className="App">
-        <Container>
-          <Header />
-          <Section />
-          <Footer />
-          <GlobalStyles />
-        </Container>
+        <Container />
+        <Header />
+        <Section />
+        <Footer />
+        <GlobalStyles />
 
 
       </div>
