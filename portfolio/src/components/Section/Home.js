@@ -1,5 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
+
+import jQuery from "jquery";
+window.$ = window.jQuery = jQuery;
+
+
+
+
 //import img from '../../assets/homeImg.jpg'
 
 
@@ -14,80 +21,75 @@ const Container = styled.div`
     }
 `;
 const TitleContainer = styled.div`
-    position:absolute;
+   
+position:absolute;
     top:55%;
-    left:50%;
+    left:65%;
     transform: translate( -50%, -50%);
     line-height:1.5;
+    width:100%;
      
 
 `;
 
-// const Title = styled.h2`
-//     font-size: 4rem;
-//     font-weight:600;
-//     white-space:nowrap;
-//     @media(min-width:540px) and (max-width: 994px){
-//         font-size: 3rem;   
-//     }
-//     @media(max-width:540px){
-//         font-size: 2.2rem;
-//     }
 
-// `;
-
-
-const typingAni = keyframes`
-0%{width:0%}
-100%{width: 850px}
-`;
 
 
 const cursor = keyframes`
-0%{opacity:0;}
-50%{opacity:1;}
-100%{opacity:0;}
+0%{border-right: 1px solid #fff} 
+50%{border-right: 1px solid #000} 
+100%{border-right: 1px solid #fff} 
 `;
 
 const SubTitle = styled.h3`
-    font-size: 3rem;
-    font-weight:600;
-    position:relative;
-    display: inline-block;
-    height: 80px;
-    width:850px; 
-    overflow: hidden;
-    animation: ${typingAni} 4s steps(30, end) 1;
+    display:none;
+`;
 
-    &:after{
-        position:absolute; 
-        display:block;
-        content:""; 
-        width: 30px; 
-        height: 50px;
-        top : 15px;
-        right:0; 
-        border-right: 5px solid #fff;
-        animation: ${cursor} 0.5s infinite;
-    }
-
-    @media(min-width:540px) and (max-width: 994px){
-        font-size: 2rem;   
-    }
-    @media(max-width:540px){
-        font-size: 1.3rem;
-    }
-    
+const Typing = styled.p`
+      font-size:4vw;
+      display: inline-block; 
+      animation-name: ${cursor}; 
+      animation-duration: 0.5s; 
+      animation-iteration-count: infinite; 
+      
+       
 `;
 
 
 const Home = () => {
+
+    useEffect(() => {
+        var typingBool = false;
+        var typingIdx = 0;
+        var typingTxt = window.$(".typing-txt").text(); // 타이핑될 텍스트를 가져온다 
+        typingTxt = typingTxt.split(""); // 한글자씩 자른다. 
+        if (typingBool === false) { // 타이핑이 진행되지 않았다면 
+            typingBool = true;
+            console.log(typingTxt.length);
+            var tyInt = setInterval(typing, 100); // 반복동작 
+
+        }
+
+        function typing () {
+            if (typingIdx < typingTxt.length) { // 타이핑될 텍스트 길이만큼 반복 
+                window.$(".typing").append(typingTxt[typingIdx]); // 한글자씩 이어준다. 
+                typingIdx++;
+            } else {
+
+
+                return () => { clearTimeout(tyInt) };
+            }
+        }
+
+    }, []); //[] 인 경우 이 컴포넌트가 처음 랜더링 될 때만 실행
+
+
+
     return (
         <Container id="Home" >
             <TitleContainer>
-
-                <SubTitle>Developer 황윤성의 포트폴리오 입니다</SubTitle>
-
+                <SubTitle className="typing-txt">Developer 황윤성의 포트폴리오 입니다.</SubTitle>
+                <Typing className="typing"></Typing>
             </TitleContainer>
         </Container>
     )
