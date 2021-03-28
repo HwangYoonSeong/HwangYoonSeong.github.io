@@ -144,34 +144,36 @@ const SlidePage = styled.span`
     font-weight:700;
     letter-spacing:3px;
 `;
-
-export default ({ data, slideCounter, increaseCounter, decreaseCounter }) => (
-    <Container id="Skill">
-        <ContentWrap>
-            <Title>Skill</Title>
-            <Content>
-                <Listwrap>
-                    <SkillList>
-                        {data.map((e, idx) => (
-                            <SkillCard key={e.skill} current={slideCounter === idx}>
-                                <CardImg src={e.img} alt={e.skill} />
-                                <CardTitle>{e.skill}</CardTitle>
-                                <CardStar>{Array(e.lv).fill(1).map((e, idx) => <FontAwesomeIcon icon="star" color="#f1c40f" key={idx} />)}</CardStar>
-                                <Cardtxt>{e.txt}</Cardtxt>
-                            </SkillCard>)
-                        )}
-                    </SkillList>
-                </Listwrap>
-                <SlideArea>
-                    <SlideButton onClick={decreaseCounter}>
-                        <FontAwesomeIcon icon="arrow-left" size="2x" />
-                    </SlideButton>
-                    <SlidePage>{slideCounter + 1}/{data.length}</SlidePage>
-                    <SlideButton onClick={increaseCounter}>
-                        <FontAwesomeIcon icon="arrow-right" size="2x" />
-                    </SlideButton>
-                </SlideArea>
-            </Content>
-        </ContentWrap>
-    </Container>
-);
+const SkillPresnter = (props) => {
+    return (
+        <Container id="Skill">
+            <ContentWrap>
+                <Title>Skill</Title>
+                <Content>
+                    <Listwrap>
+                        <SkillList>
+                            {props.data.map((e, idx) => (
+                                <SkillCard key={e.skill} current={props.slideCounter === idx}>
+                                    <CardImg src={e.img} alt={e.skill} />
+                                    <CardTitle>{e.skill}</CardTitle>
+                                    <CardStar>{Array(e.lv).fill(1).map((e, idx) => <FontAwesomeIcon icon="star" color="#f1c40f" key={idx} />)}</CardStar>
+                                    <Cardtxt>{e.txt}</Cardtxt>
+                                </SkillCard>)
+                            )}
+                        </SkillList>
+                    </Listwrap>
+                    <SlideArea>
+                        <SlideButton onClick={props.decreaseCounter}>
+                            <FontAwesomeIcon icon="arrow-left" size="2x" />
+                        </SlideButton>
+                        <SlidePage>{props.slideCounter + 1}/{props.data.length}</SlidePage>
+                        <SlideButton onClick={props.increaseCounter}>
+                            <FontAwesomeIcon icon="arrow-right" size="2x" />
+                        </SlideButton>
+                    </SlideArea>
+                </Content>
+            </ContentWrap>
+        </Container>
+    )
+}
+export default SkillPresnter;

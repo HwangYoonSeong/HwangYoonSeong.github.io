@@ -13,12 +13,14 @@ const Container = styled.section`
     }
 
 `;
-
-export default () => (
-    <Container>
-        <Home />
-        <About />
-        <Skill />
-        <Project />
-    </Container>
-);
+const container = () => {
+    return (
+        <Container>
+            <Home />
+            <About />
+            <Skill />
+            <Project />
+        </Container>
+    )
+}
+export default container;

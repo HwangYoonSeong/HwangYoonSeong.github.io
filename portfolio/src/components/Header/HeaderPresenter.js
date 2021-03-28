@@ -12,8 +12,9 @@ const Header = styled.header`
     color: rgb(20,20,20);
     
     @media (max-width: 994px){
-        padding: 6px;
-        z-index:2;
+        padding: 0px;
+        background-color:  #fff;
+        z-index:1;
         
     }
 `;
@@ -54,11 +55,12 @@ const NavList = styled.ul`
     font-size: 18px;
     font-weight:600;
     text-align:center;
+    
     @media (max-width: 994px){
         display:block;
         position:absolute;
         width:100%;
-        top:${props => props.current ? "100%" : "-300%"};
+        top:${props => props.current ? "100%" : "-400%"};
         left: 0;
         transition: top .3s ease-in;
         line-height:3;
@@ -71,6 +73,7 @@ const Item = styled.li`
     height:100%;
     border-bottom: 3px solid ${props => props.current ? "#27ae60" : "transparent"};
     transition: border-bottom .2s ease-in;
+    
     &:hover{
         color: #aaa;
     }
@@ -85,6 +88,7 @@ const Item = styled.li`
             color:#fff;
             background-color: rgba(50,50,50, .95);
         }
+        z-index:0;
     }
 `;
 
@@ -106,30 +110,32 @@ const MobCover = styled.div`
         display:block;
     }
 `;
-
-export default ({ pos, home, about, skill, project, toggleBtn, isClickList }) => (
-
-    <Header current={pos > 0}>
-        <HeaderWrap>
-            <Logo>
-                <span style={{ color: "#27ae60", fontWeight: "bold" }}>Yoon</span>castle
+const HeaderPresenter = (props) => {
+    return (
+        <Header current={props.pos > 0}>
+            <HeaderWrap>
+                <Logo>
+                    <span style={{ color: "#27ae60", fontWeight: "bold" }}>Yoon</span>castle
             </Logo>
-            <MobCover />
-            <Button onClick={toggleBtn}>{isClickList ? <FontAwesomeIcon icon="times" size="2x" /> : <FontAwesomeIcon icon="bars" size="2x" />} </Button>
-            <NavList current={isClickList}>
-                <Item current={pos >= home.top && pos <= home.bottom}>
-                    <Link href="#Home">Home</Link>
-                </Item>
-                <Item current={pos >= about.top && pos <= about.bottom}>
-                    <Link href="#About">About</Link>
-                </Item>
-                <Item current={pos >= skill.top && pos <= skill.bottom}>
-                    <Link href="#Skill">Skill</Link>
-                </Item>
-                <Item current={pos >= project.top && pos <= project.bottom}>
-                    <Link href="#Project">Project</Link>
-                </Item>
-            </NavList>
-        </HeaderWrap>
-    </Header>
-)
+                <MobCover />
+                <Button onClick={props.toggleBtn}>{props.isClickList ? <FontAwesomeIcon icon="times" size="2x" /> : <FontAwesomeIcon icon="bars" size="2x" />} </Button>
+                <NavList current={props.isClickList}>
+                    <Item current={props.pos >= props.home.top && props.pos <= props.home.bottom}>
+                        <Link href="#Home">Home</Link>
+                    </Item>
+                    <Item current={props.pos >= props.about.top && props.pos <= props.about.bottom}>
+                        <Link href="#About">About</Link>
+                    </Item>
+                    <Item current={props.pos >= props.skill.top && props.pos <= props.skill.bottom}>
+                        <Link href="#Skill">Skill</Link>
+                    </Item>
+                    <Item current={props.pos >= props.project.top && props.pos <= props.project.bottom}>
+                        <Link href="#Project">Project</Link>
+                    </Item>
+                </NavList>
+            </HeaderWrap>
+        </Header>
+    )
+
+}
+export default HeaderPresenter;

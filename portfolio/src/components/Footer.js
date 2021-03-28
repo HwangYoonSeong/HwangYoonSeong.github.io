@@ -16,8 +16,12 @@ const Copyright = styled.p`
     color: #999;
 `;
 
-export default () => (
-    <Footer>
-        <Copyright>© 2021 Copyright <span style={{ color: "#ddd" }}>Yooncastle</span></Copyright>
-    </Footer>
-)
+
+const footer = () => {
+    return (
+        <Footer>
+            <Copyright>© 2021 Copyright <span style={{ color: "#ddd" }}>Yooncastle</span></Copyright>
+        </Footer>
+    )
+}
+export default footer;

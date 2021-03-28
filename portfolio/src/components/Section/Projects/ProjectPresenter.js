@@ -99,6 +99,7 @@ const ContentTxt = styled.p`
         font-size:1rem;
     }
 `;
+
 const ContentURL = styled.a`
     font-size: 1rem;
     font-weight:700;
@@ -116,41 +117,44 @@ const ContentURL = styled.a`
         content:""
     }
 `;
-const ContentUrl = styled.a`
-    font-size: 1.2rem;
-    font-weight:700;
-    transition: color .2s linear;
-    color:#333;
-    &:hover{
-        color:#a9a9a9;
-    }
-    @media(max-width:540px){
-     color:#333;   
-    }
-`;
+// const ContentUrl = styled.a`
+//     font-size: 1.2rem;
+//     font-weight:700;
+//     transition: color .2s linear;
+//     color:#333;
+//     &:hover{
+//         color:#a9a9a9;
+//     }
+//     @media(max-width:540px){
+//      color:#333;   
+//     }
+// `;
 
-export default ({ data }) => (
-    <Container id="Project">
-        <ContentWrap>
-            <Title>Project</Title>
-            <Content>
-                {data.map(e =>
-                    <Card key={e.id}>
-                        <CardImg src={e.img} alt={e.id} />
-                        <CardContent>
-                            <CardTitle>{e.id}</CardTitle>
-                            <ContentTxt>{e.txt}</ContentTxt>
-                            {e.url && (
-                                <ContentURL href={e.url} name="'URL: '">
-                                    {e.url}
-                                </ContentURL>
-                            )}
+const ProjectPresenter = (props) => {
+    return (
+        <Container id="Project">
+            <ContentWrap>
+                <Title>Project</Title>
+                <Content>
+                    {props.data.map(e =>
+                        <Card key={e.id}>
+                            <CardImg src={e.img} alt={e.id} />
+                            <CardContent>
+                                <CardTitle>{e.id}</CardTitle>
+                                <ContentTxt>{e.txt}</ContentTxt>
+                                {e.url && (
+                                    <ContentURL href={e.url} name="'URL: '">
+                                        {e.url}
+                                    </ContentURL>
+                                )}
 
-                            <ContentURL href={e.git} name="'Git: '">{e.git}</ContentURL>
-                        </CardContent>
-                    </Card>
-                )}
-            </Content>
-        </ContentWrap>
-    </Container>
-);  
+                                <ContentURL href={e.git} name="'Git: '">{e.git}</ContentURL>
+                            </CardContent>
+                        </Card>
+                    )}
+                </Content>
+            </ContentWrap>
+        </Container>
+    )
+}
+export default ProjectPresenter;

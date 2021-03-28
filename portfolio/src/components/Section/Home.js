@@ -22,18 +22,19 @@ const TitleContainer = styled.div`
      
 
 `;
-const Title = styled.h2`
-    font-size: 4rem;
-    font-weight:600;
-    white-space:nowrap;
-    @media(min-width:540px) and (max-width: 994px){
-        font-size: 3rem;   
-    }
-    @media(max-width:540px){
-        font-size: 2.2rem;
-    }
 
-`;
+// const Title = styled.h2`
+//     font-size: 4rem;
+//     font-weight:600;
+//     white-space:nowrap;
+//     @media(min-width:540px) and (max-width: 994px){
+//         font-size: 3rem;   
+//     }
+//     @media(max-width:540px){
+//         font-size: 2.2rem;
+//     }
+
+// `;
 
 
 const typingAni = keyframes`
@@ -80,14 +81,16 @@ const SubTitle = styled.h3`
 `;
 
 
+const Home = () => {
+    return (
+        <Container id="Home" >
+            <TitleContainer>
 
+                <SubTitle>Developer 황윤성의 포트폴리오 입니다</SubTitle>
 
-export default () => (
-    <Container id="Home" >
-        <TitleContainer>
+            </TitleContainer>
+        </Container>
+    )
+}
 
-            <SubTitle>Developer 황윤성의 포트폴리오 입니다</SubTitle>
-
-        </TitleContainer>
-    </Container>
-)
+export default Home;

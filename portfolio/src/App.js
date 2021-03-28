@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 import { faPhone, faBirthdayCake, faEnvelope, faStar, faBars, faTimes, faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -29,20 +29,20 @@ const Container = styled.div`
 
 
 
-class App extends Component {
-  render () {
-    return (
-      <div className="App">
-        <Container />
-        <Header />
-        <Section />
-        <Footer />
-        <GlobalStyles />
+function App () {
+
+  return (
+    <div className="App">
+      <Container />
+      <Header />
+      <Section />
+      <Footer />
+      <GlobalStyles />
 
 
-      </div>
-    );
-  }
+    </div>
+  );
 }
+
 
 export default App;

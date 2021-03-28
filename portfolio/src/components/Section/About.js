@@ -127,66 +127,68 @@ const MyIntro = styled.div`
         font-size: 1.1rem;
     }
 `;
-
-export default () => (
-    <Container id="About">
-        <Title>About</Title>
-        <Content>
-            <Profile>
-                <ProfileImg src={PROFILE} alt="프로필 사진"></ProfileImg>
-                <ProfileText>
-                    <ProfileTitle>황윤성</ProfileTitle>
-                    <ProfileSubtitle>Front-End Developer</ProfileSubtitle>
-                    <ProfileDetail>
-                        <ProfileItem>
-                            <ItemIcon>
-                                <FontAwesomeIcon icon="birthday-cake" size="2x" />
-                            </ItemIcon>
-                            <Itemtxt>
-                                <ItemTitle>Birthday : </ItemTitle>
+const About = () => {
+    return (
+        <Container id="About">
+            <Title>About</Title>
+            <Content>
+                <Profile>
+                    <ProfileImg src={PROFILE} alt="프로필 사진"></ProfileImg>
+                    <ProfileText>
+                        <ProfileTitle>황윤성</ProfileTitle>
+                        <ProfileSubtitle>Front-End Developer</ProfileSubtitle>
+                        <ProfileDetail>
+                            <ProfileItem>
+                                <ItemIcon>
+                                    <FontAwesomeIcon icon="birthday-cake" size="2x" />
+                                </ItemIcon>
+                                <Itemtxt>
+                                    <ItemTitle>Birthday : </ItemTitle>
                                 April 4, 1997
                             </Itemtxt>
-                        </ProfileItem>
-                        <ProfileItem>
-                            <ItemIcon>
-                                <FontAwesomeIcon icon="phone" size="2x" />
-                            </ItemIcon>
-                            <Itemtxt>
-                                <ItemTitle>Phone : </ItemTitle>
+                            </ProfileItem>
+                            <ProfileItem>
+                                <ItemIcon>
+                                    <FontAwesomeIcon icon="phone" size="2x" />
+                                </ItemIcon>
+                                <Itemtxt>
+                                    <ItemTitle>Phone : </ItemTitle>
                                 +82 010 2222 3333
                             </Itemtxt>
-                        </ProfileItem>
-                        <ProfileItem>
-                            <ItemIcon>
-                                <FontAwesomeIcon icon="envelope" size="2x" />
-                            </ItemIcon>
-                            <Itemtxt>
-                                <ItemTitle>EMail : </ItemTitle>
-                                <ItemLink href="mailto:dbstjd427@naver.com">dbstjd427@naver.com</ItemLink>
-                            </Itemtxt>
-                        </ProfileItem>
-                        <ProfileItem>
-                            <ItemIcon>
-                                <FontAwesomeIcon icon={faGithub} size="2x" />
-                            </ItemIcon>
-                            <Itemtxt>
-                                <ItemTitle>Github : </ItemTitle>
-                                <ItemLink href="https://github.com/HwangYoonSeong">
-                                    https://github.com/HwangYoonSeong
+                            </ProfileItem>
+                            <ProfileItem>
+                                <ItemIcon>
+                                    <FontAwesomeIcon icon="envelope" size="2x" />
+                                </ItemIcon>
+                                <Itemtxt>
+                                    <ItemTitle>EMail : </ItemTitle>
+                                    <ItemLink href="mailto:dbstjd427@naver.com">dbstjd427@naver.com</ItemLink>
+                                </Itemtxt>
+                            </ProfileItem>
+                            <ProfileItem>
+                                <ItemIcon>
+                                    <FontAwesomeIcon icon={faGithub} size="2x" />
+                                </ItemIcon>
+                                <Itemtxt>
+                                    <ItemTitle>Github : </ItemTitle>
+                                    <ItemLink href="https://github.com/HwangYoonSeong">
+                                        https://github.com/HwangYoonSeong
                             </ItemLink>
 
-                            </Itemtxt>
-                        </ProfileItem>
-                    </ProfileDetail>
-                </ProfileText>
-            </Profile>
-            <MyIntro>
-                <div> <h2>The devil is in the detail</h2> <br />
+                                </Itemtxt>
+                            </ProfileItem>
+                        </ProfileDetail>
+                    </ProfileText>
+                </Profile>
+                <MyIntro>
+                    <div> <h2>The devil is in the detail</h2> <br />
                     그럴싸해 보이는 웹사이트가 아닌 완벽함을 추구합니다.<br />
                     작은 요소 하나하나까지 기꺼이 시간과 노력을 쏟아 부울수 있는<br />
                         열정적인 개발자입니다.
                         </div>
-            </MyIntro>
-        </Content>
-    </Container>
-);
+                </MyIntro>
+            </Content>
+        </Container>
+    )
+}
+export default About;
