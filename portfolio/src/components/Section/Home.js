@@ -43,13 +43,14 @@ const cursor = keyframes`
 
 const SubTitle = styled.h3`
     display:none;
+   
 `;
 
 const Typing = styled.p`
       font-size:4vw;
       display: inline-block; 
       animation-name: ${cursor}; 
-      animation-duration: 0.5s; 
+      animation-duration: 1s; 
       animation-iteration-count: infinite; 
       
        
@@ -88,7 +89,7 @@ const Home = () => {
     return (
         <Container id="Home" >
             <TitleContainer>
-                <SubTitle className="typing-txt">Developer 황윤성의 포트폴리오 입니다.</SubTitle>
+                <SubTitle className="typing-txt"><b>Developer 황윤성의 포트폴리오 입니다.</b></SubTitle>
                 <Typing className="typing"></Typing>
             </TitleContainer>
         </Container>

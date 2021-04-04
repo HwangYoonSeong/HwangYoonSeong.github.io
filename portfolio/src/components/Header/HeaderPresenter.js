@@ -6,24 +6,25 @@ const Header = styled.header`
     position:fixed;
     width:100%;
     padding: 0 100px;
-    background-color:  #fff;
+    background-color: ${props => props.current ? "#fff" : "transparent"};
     transition: all .1s linear;
     z-index:1;
-    color: rgb(20,20,20);
-    
+    color: ${props => props.current ? "rgb(20,20,20)" : "#fff"};
     @media (max-width: 994px){
         padding: 0px;
+        color:rgb(20,20,20);
         background-color:  #fff;
-        z-index:1;
+        
+       
         
     }
 `;
 
 const HeaderWrap = styled.nav`
     display: flex;
-     
+    position:relative;
     justify-content:space-between;
-    height: 60px;
+    height: 80px;
     
 `;
 const Button = styled.button`
@@ -37,22 +38,22 @@ const Button = styled.button`
     text-align:center;
     @media (max-width: 994px){
         display:block;
-        z-index:2;
+        z-index:1;
     }
 `;
 const Logo = styled.h1`
     padding-top: 15px;
-    font-size: 24px;
+    font-size: 50px;
     height: 100%;
     @media (max-width: 994px){
         margin-left: 30px;
-        z-index:2;
+         
     }
 `;
 
 const NavList = styled.ul`
     display:flex;
-    font-size: 18px;
+    font-size: 30px;
     font-weight:600;
     text-align:center;
     
@@ -64,7 +65,7 @@ const NavList = styled.ul`
         left: 0;
         transition: top .3s ease-in;
         line-height:3;
-        z-index:0;
+         
     }
 `;
 
@@ -77,7 +78,7 @@ const Item = styled.li`
     &:hover{
         color: #aaa;
     }
-    margin-right: 20px;
+    margin-right: 60px;
     @media (max-width: 994px){
         display:block;
         width: 100%;
@@ -88,7 +89,8 @@ const Item = styled.li`
             color:#fff;
             background-color: rgba(50,50,50, .95);
         }
-        z-index:0;
+        
+        
     }
 `;
 
@@ -105,7 +107,7 @@ const MobCover = styled.div`
     height:100%;
      
     display:none;
-    z-index:1;
+     
     @media (max-width: 994px){
         display:block;
     }
