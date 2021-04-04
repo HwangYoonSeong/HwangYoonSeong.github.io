@@ -77,18 +77,19 @@ const Item = styled.li`
     transition: border-bottom .2s ease-in;
     
     &:hover{
-        color: #aaa;
+        color: #27ae60;
     }
     margin-right: 60px;
     @media (max-width: 994px){
+        color:#27ae60;
         display:block;
         width: 100%;
         border-bottom: none;
-        background-color: rgba(225,225,225, .90);
+        background-color: #fff;
         text-align:center;
         &:hover{
             color:#fff;
-            background-color: rgba(50,50,50, .95);
+            background-color: #27ae60;
         }
         
         
@@ -101,12 +102,12 @@ const Link = styled.a`
     align-items:center;
     justify-content:center;
 `;
-
+//NavList 가리기 용
 const MobCover = styled.div`
     position:absolute;
     width:100%;
     height:100%;
-     
+    background-color:  #fff; 
     display:none;
     z-index:1;
     @media (max-width: 994px){
