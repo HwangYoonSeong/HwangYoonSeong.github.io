@@ -1,17 +1,13 @@
 import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
-
+import img from '../../assets/homeImg.jpg'
 import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
 
 
-
-
-//import img from '../../assets/homeImg.jpg'
-
-
-
 const Container = styled.div`
+display: inline-block;
+
     position:relative;
     width:100%;
     height:calc(100vh - 2rem) ;
@@ -19,6 +15,20 @@ const Container = styled.div`
     @media(max-width: 994px){
         height: 85vh;  
     }
+`;
+
+const Background = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-attachment:fixed;
+    background-image: url(${img});
+    background-position: center center;
+    background-size: cover;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    transform: scale(1.05);
+    z-index:-1;
 `;
 const TitleContainer = styled.div`
    
@@ -31,9 +41,6 @@ position:absolute;
      
 
 `;
-
-
-
 
 const cursor = keyframes`
 0%{border-right: 1px solid #fff} 
@@ -88,6 +95,7 @@ const Home = () => {
 
     return (
         <Container id="Home" >
+            <Background />
             <TitleContainer>
                 <SubTitle className="typing-txt"><b>Developer 황윤성의 포트폴리오 입니다.</b></SubTitle>
                 <Typing className="typing"></Typing>

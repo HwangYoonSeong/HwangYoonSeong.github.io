@@ -11,7 +11,7 @@ const Container = styled.article`
 const ContentWrap = styled.div`
     width:1200px;
     padding: 80px 0;
-    margin: 30px auto;
+    margin: 10px auto;
     @media (max-width: 1219px) {
         width: 100%;
     }
