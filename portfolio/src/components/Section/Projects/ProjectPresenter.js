@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Carousel from 'react-material-ui-carousel'
+import { Paper, Button } from '@material-ui/core'
 
 const Container = styled.article`
     background-color: rgba(112, 161, 255, .1);
@@ -130,7 +131,33 @@ const ContentURL = styled.a`
 //     }
 // `;
 
+
+function Item (props) {
+    return (
+        <Paper>
+            <h2>{props.item.name}</h2>
+            <p>{props.item.description}</p>
+
+            <Button className="CheckButton">
+                Check it out!
+            </Button>
+        </Paper>
+    )
+}
+
 const ProjectPresenter = (props) => {
+
+
+    var items = [
+        {
+            name: "Random Name #1",
+            description: "Probably the most random thing you have ever seen!"
+        },
+        {
+            name: "Random Name #2",
+            description: "Hello World!"
+        }
+    ]
     return (
         <Container id="Project">
             <ContentWrap>
@@ -151,8 +178,16 @@ const ProjectPresenter = (props) => {
                                 <ContentURL href={e.git} name="'Git: '">{e.git}</ContentURL>
                             </CardContent>
                         </Card>
+
+
                     )}
                 </Content>
+
+                <Carousel>
+                    {
+                        items.map((item, i) => <Item key={i} item={item} />)
+                    }
+                </Carousel>
             </ContentWrap>
         </Container>
     )
