@@ -20,14 +20,14 @@ display: inline-block;
 const Background = styled.div`
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 1200px;
     background-attachment:fixed;
     background-image: url(${img});
     background-position: center center;
     background-size: cover;
     filter: blur(8px);
     -webkit-filter: blur(8px);
-    transform: scale(1.05);
+    transform: scale(1.1);
     z-index:-1;
 `;
 const TitleContainer = styled.div`

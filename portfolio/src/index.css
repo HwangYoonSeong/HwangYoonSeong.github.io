@@ -8,6 +8,12 @@ body {
   overflow: auto; 
 }
 
+/* actual styles */
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

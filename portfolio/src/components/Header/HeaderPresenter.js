@@ -9,15 +9,13 @@ const Header = styled.header`
     background-color: ${props => props.current ? "#fff" : "transparent"};
     transition: all .1s linear;
     z-index:2;
-    
     color: ${props => props.current ? "rgb(20,20,20)" : "#fff"};
+
     @media (max-width: 994px){
         padding: 0px;
         color:rgb(20,20,20);
         background-color:  #fff;
-        
-       
-        
+ 
     }
 `;
 
@@ -37,6 +35,7 @@ const Button = styled.button`
     margin-right: 30px;
     cursor:pointer;
     text-align:center;
+
     @media (max-width: 994px){
         display:block;
         z-index:2;
@@ -46,6 +45,7 @@ const Logo = styled.h1`
     padding-top: 15px;
     font-size: 40px;
     height: 100%;
+
     @media (max-width: 994px){
         margin-left: 30px;
         z-index:2;
@@ -63,10 +63,9 @@ const NavList = styled.ul`
         position:absolute;
         width:100%;
         top:${props => props.current ? "100%" : "-400%"};
-        left: 0;
         transition: top .3s ease-in;
         line-height:3;
-         z-index:0;
+        z-index:-1;
     }
 `;
 
@@ -80,6 +79,7 @@ const Item = styled.li`
         color: #27ae60;
     }
     margin-right: 60px;
+
     @media (max-width: 994px){
         color:#27ae60;
         display:block;
@@ -110,6 +110,7 @@ const MobCover = styled.div`
     background-color:  #fff; 
     display:none;
     z-index:1;
+
     @media (max-width: 994px){
         display:block;
     }
@@ -120,7 +121,7 @@ const HeaderPresenter = (props) => {
             <HeaderWrap>
                 <Logo>
                     <span style={{ color: "#27ae60", fontWeight: "bold" }}>Yoon</span>castle
-            </Logo>
+                </Logo>
                 <MobCover />
                 <Button onClick={props.toggleBtn}>{props.isClickList ? <FontAwesomeIcon icon="times" size="2x" /> : <FontAwesomeIcon icon="bars" size="2x" />} </Button>
                 <NavList current={props.isClickList}>
@@ -142,4 +143,6 @@ const HeaderPresenter = (props) => {
     )
 
 }
+
+
 export default HeaderPresenter;
