@@ -33,10 +33,27 @@ const Title = styled.p`
 
 const Content = styled.div`
     margin: 80px 0;
-    padding: 30px;
     display:flex;
     justify-content:center;
+    
 `;
+
+const LeftLine = styled.div`
+width:900px;
+background:#D5F5E3;
+padding-left:20px;
+
+`;
+
+const WhiteBack = styled.div`
+    
+    display:flex;
+    justify-content:center;
+    padding: 10px 30px 10px 0px;
+    background:#fff;
+`;
+
+
 const About = styled.div`
    padding:10px;
    margin-right:7%;
@@ -227,47 +244,53 @@ const ProjectPresenter = (props) => {
             <ContentWrap>
                 <Title>Project</Title>
                 <Content>
-                    <About>
-                        <PrjTitle>셈틀꾼 공식 홈페이지</PrjTitle>
+                    <LeftLine>
+                        <WhiteBack>
+                            <About>
+                                <PrjTitle>셈틀꾼 공식 홈페이지</PrjTitle>
 
-                        <PrjContent>컴퓨터 공학과 학술 동아리 '셈틀꾼' 회원 전용 프로젝트  공고,게시,질문 사이트.</PrjContent>
+                                <PrjContent>컴퓨터 공학과 학술 동아리 '셈틀꾼' 회원 전용 프로젝트  공고,게시,질문 사이트</PrjContent>
 
-                        <IconWrap>
-                            <RiTeamFill size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt>15명(백앤드 담당)</IconTxt>
-                        </IconWrap>
-                        <IconWrap>
-                            <BiCalendar size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt>2020.07.04 ~ 2020.09.20</IconTxt>
-                        </IconWrap>
-                        <IconWrap>
-                            <FaHashtag size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt><Skill>Vue.js</Skill><Skill>Node.js</Skill><Skill>MongoDB</Skill>  </IconTxt>
-                        </IconWrap>
-                        <br></br>
-                        <IconWrap>
-                            <a href="http://sbmi.iptime.org/project/detail/5f6795042dd42431727251a3">
-                                <BiLinkExternal size="1.5rem" /><IconTxt>   </IconTxt>
-                            </a>
-                            <a href="https://github.com/HwangYoonSeong/semtle-back">
-                                <AiFillGithub size="1.5rem" /><IconTxt>   </IconTxt>
+                                <IconWrap>
+                                    <RiTeamFill size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt>15명(백앤드 담당)</IconTxt>
+                                </IconWrap>
+                                <IconWrap>
+                                    <BiCalendar size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt>2020.07.04 ~ 2020.09.20</IconTxt>
+                                </IconWrap>
+                                <IconWrap>
+                                    <FaHashtag size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt><Skill>Vue.js</Skill><Skill>Node.js</Skill><Skill>MongoDB</Skill>  </IconTxt>
+                                </IconWrap>
+                                <br></br>
+                                <IconWrap>
+                                    <a href="http://sbmi.iptime.org/project/detail/5f6795042dd42431727251a3">
+                                        <BiLinkExternal size="1.5rem" /><IconTxt>   </IconTxt>
+                                    </a>
+                                    <a href="https://github.com/HwangYoonSeong/semtle-back">
+                                        <AiFillGithub size="1.5rem" /><IconTxt>   </IconTxt>
 
-                            </a>
-                        </IconWrap>
-                    </About>
+                                    </a>
+                                </IconWrap>
+                            </About>
 
-                    <Slick>
-                        <Slider {...settings}
-                        >
-                            {items.map(item => {
-                                return (
-                                    <div key={item.id}>
-                                        <ImageContainer>
-                                            <PrjImage src={semtleggun} />
-                                        </ImageContainer>
-                                    </div>
-                                );
-                            })}
-                        </Slider>
+                            <Slick>
+                                <Slider {...settings}
+                                >
+                                    {items.map(item => {
+                                        return (
+                                            <div key={item.id}>
+                                                <ImageContainer>
+                                                    <PrjImage src={semtleggun} />
+                                                </ImageContainer>
+                                            </div>
+                                        );
+                                    })}
+                                </Slider>
 
-                    </Slick>
+                            </Slick>
+
+                        </WhiteBack>
+                    </LeftLine>
+
 
 
 
