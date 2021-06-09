@@ -2,6 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import Slider from "react-slick";
 import semtleggun from '../../../assets/semtleggun.png';
+import { RiTeamFill } from "react-icons/ri";
+import { BiCalendar } from "react-icons/bi";
+import { FaHashtag } from "react-icons/fa";
+import { BiLinkExternal } from "react-icons/bi";
+import { AiFillGithub } from "react-icons/ai";
+
 const Container = styled.div`
     background-color: #fff;
    
@@ -16,7 +22,7 @@ const ContentWrap = styled.div`
     }
 `;
 
-const Title = styled.h2`
+const Title = styled.p`
     font-size: 3rem;
     font-weight: 600;
     color: #27ae60;
@@ -26,13 +32,14 @@ const Title = styled.h2`
 `;
 
 const Content = styled.div`
-    padding: 80px 0;
+    margin: 80px 0;
+    padding: 30px;
     display:flex;
     justify-content:center;
 `;
 const About = styled.div`
-    margin: 0 80px 0 20px ;
-   
+   padding:10px;
+   margin-right:7%;
 `;
 
 const CardImg = styled.img`
@@ -78,10 +85,7 @@ const CardImg = styled.img`
 // `;
 
 const Slick = styled.div`
-    display:block;
-    margin: 0 auto;
-    width: 200px;
-    height:100%;
+    width: 330px;
     z-index:1;
      
        
@@ -137,20 +141,44 @@ const Slick = styled.div`
 // `;
 
 const ImageContainer = styled.div`
-  margin: 0 16px;
+    margin: 0 16px;
 `;
 
-const Image = styled.img`
-width:100px;
-height:100px;
+const PrjImage = styled.img`
+    width:100%;
 `;
 
+const PrjTitle = styled.p`
+    font-size: 20px;
+    font-weight:bold;
+    
+`
+const IconTxt = styled.span`
+    display:inline-block;
+    font-weight:bold;
+    padding:10px;
+    
+`
 
-const ProjectImg = styled.div`
-     width:100px;
-     height:100px;
-     background-color:#aff;
-`;
+const IconWrap = styled.div`
+    margin-top:10px;
+    display:flex;
+`
+
+const PrjContent = styled.p`
+    margin:40px 0;
+    font-weight:bold;
+`
+
+const Skill = styled.span`
+  font-weight:bold;
+  background:  #27ae60;
+  margin:10px;
+  border-radius:50px;
+  padding:10px;
+  color:white;
+`
+
 
 const SampleNextArrow = (props) => {
     const { className, style, onClick } = props;
@@ -188,7 +216,7 @@ const ProjectPresenter = (props) => {
         speed: 500,
         slidesToShow: 1,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 4000,
         slidesToScroll: 1,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />
@@ -199,41 +227,51 @@ const ProjectPresenter = (props) => {
             <ContentWrap>
                 <Title>Project</Title>
                 <Content>
-
                     <About>
-                        <h1>셈틀꾼 공식 홈페이지</h1>
+                        <PrjTitle>셈틀꾼 공식 홈페이지</PrjTitle>
+
+                        <PrjContent>컴퓨터 공학과 학술 동아리 '셈틀꾼' 회원 전용 프로젝트  공고,게시,질문 사이트.</PrjContent>
+
+                        <IconWrap>
+                            <RiTeamFill size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt>15명(백앤드 담당)</IconTxt>
+                        </IconWrap>
+                        <IconWrap>
+                            <BiCalendar size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt>2020.07.04 ~ 2020.09.20</IconTxt>
+                        </IconWrap>
+                        <IconWrap>
+                            <FaHashtag size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt><Skill>Vue.js</Skill><Skill>Node.js</Skill><Skill>MongoDB</Skill>  </IconTxt>
+                        </IconWrap>
                         <br></br>
-                        <p>컴퓨터 공학과 학술 동아리 '셈틀꾼' 회원 전용 프로젝트  공고,게시,질문 사이트. 백앤드 담당</p>
+                        <IconWrap>
+                            <a href="http://sbmi.iptime.org/project/detail/5f6795042dd42431727251a3">
+                                <BiLinkExternal size="1.5rem" /><IconTxt>   </IconTxt>
+                            </a>
+                            <a href="https://github.com/HwangYoonSeong/semtle-back">
+                                <AiFillGithub size="1.5rem" /><IconTxt>   </IconTxt>
+
+                            </a>
+                        </IconWrap>
                     </About>
-                    <div>
-                        <Slick>
 
-                            <Slider {...settings}
-                            >
-                                {items.map(item => {
-                                    return (
-                                        <div key={item.id}>
-                                            <ImageContainer>
-                                                <Image src={semtleggun} />
-                                            </ImageContainer>
-                                        </div>
-                                    );
-                                })}
-                            </Slider>
+                    <Slick>
+                        <Slider {...settings}
+                        >
+                            {items.map(item => {
+                                return (
+                                    <div key={item.id}>
+                                        <ImageContainer>
+                                            <PrjImage src={semtleggun} />
+                                        </ImageContainer>
+                                    </div>
+                                );
+                            })}
+                        </Slider>
 
-                        </Slick>
-                    </div>
-
-
-
+                    </Slick>
 
 
 
                 </Content>
-
-
-
-
 
             </ContentWrap>
         </Container >
