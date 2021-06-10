@@ -6,7 +6,7 @@ window.$ = window.jQuery = jQuery;
 
 
 const Container = styled.div`
-display: inline-block;
+    display: inline-block;
 
     position:relative;
     width:100%;
@@ -19,7 +19,7 @@ display: inline-block;
 
 const Background = styled.div`
     position: absolute;
-    width: 100%;
+    width: 90.9%;
     height: 1200px;
     background-attachment:fixed;
     background-image: url(${img});
@@ -27,9 +27,11 @@ const Background = styled.div`
     background-size: cover;
     filter: blur(8px);
     -webkit-filter: blur(8px);
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -webkit-transform-origin:0.0;
     z-index:-1;
 `;
+
 const TitleContainer = styled.div`
    
 position:absolute;
@@ -96,10 +98,10 @@ const Home = () => {
     return (
         <Container id="Home" >
             <Background />
-            <TitleContainer>
+            {/* <TitleContainer>
                 <SubTitle className="typing-txt"><b>Developer 황윤성의 포트폴리오 입니다.</b></SubTitle>
                 <Typing className="typing"></Typing>
-            </TitleContainer>
+            </TitleContainer> */}
         </Container>
     )
 }
