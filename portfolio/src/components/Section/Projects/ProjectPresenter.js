@@ -32,6 +32,7 @@ const Title = styled.p`
 `;
 
 const Content = styled.div`
+
     margin: 80px 0;
     display:flex;
     justify-content:center;
@@ -42,7 +43,12 @@ const LeftLine = styled.div`
 width:900px;
 background:#D5F5E3;
 padding-left:20px;
+@media (max-width: 1219px) {
+    width:100%;
+    background:#fff;
+    padding:0px;
 
+}
 `;
 
 const WhiteBack = styled.div`
@@ -51,60 +57,37 @@ const WhiteBack = styled.div`
     justify-content:center;
     padding: 10px 30px 10px 0px;
     background:#fff;
+
+    @media (max-width: 1219px) {
+        display:block;
+        margin:auto;
+        width:80%;
+        text-align:center;
+        padding:0px;
+    }
+
 `;
 
 
 const About = styled.div`
    padding:10px;
    margin-right:7%;
-`;
+   @media (max-width: 1219px) {
+    padding:0px;
+    margin-right:0%;
+}
 
-const CardImg = styled.img`
-    height:100%;
-    transition: transform .3s linear;
-    @media(max-width: 994px) {
-        height:auto;
-        width:100%;
-    }
-`;
 
-// const Card = styled.div`
-//     display:flex;
-//     margin: 0 auto;
-//     width: 930px;
-//     height:300px;
-//     border-left: 8px solid #2ecc71;
-//     border-right: 8px solid #2ecc71;
-//     border-radius:5px;
-//     transition: box-shadow .2s ease-in-out;
-//     z-index:1;
-//     overflow: hidden;
-//     &:not(:last-child){
-//         margin-bottom: 30px;
-//     }
-//     &:hover{
-//         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-//     }
-//     &:hover ${CardImg}{
-//         transform:scale(1.1)
-//     }
-//     @media(max-width: 994px) {
-//         display:block;
-//         width:90%;
-//         height:100%;
-//         border:none;
-//         border-bottom: 4px solid #2ecc71;
-//         border-top: 4px solid #2ecc71;
-//         &:hover ${CardImg}{
-//             transform: none;
-//         } 
-//     }
-// `;
+`;
 
 const Slick = styled.div`
-    width: 330px;
+    width: 480px;
     z-index:1;
-     
+    @media (max-width: 1219px) {
+        margin:50px auto;
+        padding:10px;
+        width:80%;
+    }
        
 `;
 
@@ -159,10 +142,12 @@ const Slick = styled.div`
 
 const ImageContainer = styled.div`
     margin: 0 16px;
+   
 `;
 
 const PrjImage = styled.img`
     width:100%;
+ 
 `;
 
 const PrjTitle = styled.p`

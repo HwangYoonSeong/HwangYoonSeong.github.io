@@ -16,9 +16,10 @@ const Container = styled.div`
     }
 `;
 
+//width: width/scale=100/1.1=90.9
 const Background = styled.div`
     position: absolute;
-    width: 90.9%;
+    width: 90.9%; 
     height: 1200px;
     background-attachment:fixed;
     background-image: url(${img});
@@ -46,7 +47,7 @@ const TitleContainer = styled.div`
     display:flex;
     justify-content:center;
     position:absolute;
-    top:55%;
+    top:50%;
     line-height:1.5;
     width:100%;
 
