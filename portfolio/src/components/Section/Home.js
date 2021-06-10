@@ -6,9 +6,8 @@ window.$ = window.jQuery = jQuery;
 
 
 const Container = styled.div`
-    display: inline-block;
-
     position:relative;
+    display: inline-block;
     width:100%;
     height:calc(100vh - 2rem) ;
     color:white;
@@ -32,22 +31,31 @@ const Background = styled.div`
     z-index:-1;
 `;
 
+// const TitleContainer = styled.div`
+
+//     position:absolute;
+//     top:55%;
+//     left:65%;
+//     transform: translate( -50%, -50%);
+//     line-height:1.5;
+//     width:100%;
+
+// `;
+
 const TitleContainer = styled.div`
-   
-position:absolute;
+    display:flex;
+    justify-content:center;
+    position:absolute;
     top:55%;
-    left:65%;
-    transform: translate( -50%, -50%);
     line-height:1.5;
     width:100%;
-     
 
 `;
 
 const cursor = keyframes`
-0%{border-right: 1px solid #fff} 
-50%{border-right: 1px solid #000} 
-100%{border-right: 1px solid #fff} 
+    0%{border-right: 1px solid #fff} 
+    50%{border-right: 1px solid #000} 
+    100%{border-right: 1px solid #fff} 
 `;
 
 const SubTitle = styled.h3`
@@ -56,11 +64,11 @@ const SubTitle = styled.h3`
 `;
 
 const Typing = styled.p`
-      font-size:4vw;
-      display: inline-block; 
-      animation-name: ${cursor}; 
-      animation-duration: 1s; 
-      animation-iteration-count: infinite; 
+    font-size:4vw;
+    display: inline-block; 
+    animation-name: ${cursor}; 
+    animation-duration: 1s; 
+    animation-iteration-count: infinite; 
       
        
 `;
@@ -98,10 +106,10 @@ const Home = () => {
     return (
         <Container id="Home" >
             <Background />
-            {/* <TitleContainer>
+            <TitleContainer>
                 <SubTitle className="typing-txt"><b>Developer 황윤성의 포트폴리오 입니다.</b></SubTitle>
                 <Typing className="typing"></Typing>
-            </TitleContainer> */}
+            </TitleContainer>
         </Container>
     )
 }
