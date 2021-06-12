@@ -7,21 +7,16 @@ const Container = styled.article`
 `;
 
 const ContentWrap = styled.div`
-    width:1200px;
     padding: 80px 0;
     margin: 0 auto;
-    @media (max-width: 1219px) {
-        width: 100%;
-    }
+   
 `;
 
 const Title = styled.h2`
     font-size: 3rem;
     font-weight: 600;
     color: #27ae60;
-    @media(max-width: 994px){
-        text-align:center;
-    }
+    text-align:center;
 `;
 
 const Content = styled.div`
@@ -37,15 +32,16 @@ const Content = styled.div`
 const Listwrap = styled.div``;
 
 const SkillList = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(3, 320px);
-  grid-gap: 20px;
-  @media (max-width: 1219px) {
-        grid-template-columns: repeat(2, 320px);
-    }
+    display: grid;
+    grid-template-columns: repeat(3, 320px);
+    grid-gap: 20px;
+    @media (max-width: 1219px) {
+            grid-template-columns: repeat(2, 320px);
+        }
+
     @media(max-width: 743px) {
-        display:block;
-    }
+            display:block;
+        }
 `;
 
 

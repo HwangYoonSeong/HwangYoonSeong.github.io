@@ -14,21 +14,17 @@ const Container = styled.div`
 `;
 
 const ContentWrap = styled.div`
-    width: 1200px;
     padding: 80px 0;
     margin: 0 auto;
-    @media (max-width: 1219px) {
-        width: 100%;
-    }
+   
 `;
 
 const Title = styled.p`
+    text-align:center;
     font-size: 3rem;
     font-weight: 600;
     color: #27ae60;
-    @media(max-width: 994px){
-        text-align:center;
-    }
+   
 `;
 
 const Content = styled.div`
@@ -36,45 +32,30 @@ const Content = styled.div`
     margin: 80px 0;
     display:flex;
     justify-content:center;
-    
-`;
-
-const LeftLine = styled.div`
-width:900px;
-background:#D5F5E3;
-padding-left:20px;
-@media (max-width: 1219px) {
-    width:100%;
-    background:#fff;
-    padding:0px;
-
-}
-`;
-
-const WhiteBack = styled.div`
-    
-    display:flex;
-    justify-content:center;
-    padding: 10px 30px 10px 0px;
-    background:#fff;
-
-    @media (max-width: 1219px) {
+    @media (max-width: 1124px) {
         display:block;
-        margin:auto;
-        width:80%;
-        text-align:center;
+        width:100%;
         padding:0px;
-    }
+        margin:80px auto;
+        width:50%;
 
+    }
 `;
+
+
 
 
 const About = styled.div`
-   padding:10px;
-   margin-right:7%;
-   @media (max-width: 1219px) {
-    padding:0px;
-    margin-right:0%;
+    padding:10px;
+    margin-right:10%;
+    @media (max-width: 1024px) {
+        padding:0px;
+        margin-right:0%;
+        text-align:center;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        
 }
 
 
@@ -83,7 +64,7 @@ const About = styled.div`
 const Slick = styled.div`
     width: 480px;
     z-index:1;
-    @media (max-width: 1219px) {
+    @media (max-width: 1024px) {
         margin:50px auto;
         padding:10px;
         width:80%;
@@ -162,9 +143,16 @@ const IconTxt = styled.span`
     
 `
 
+
+const IconContainer = styled.div`
+    @media (max-width: 1024px) {
+        text-align:left;
+    }
+`
+
 const IconWrap = styled.div`
     margin-top:10px;
-    display:flex;
+    
 `
 
 const PrjContent = styled.p`
@@ -229,52 +217,49 @@ const ProjectPresenter = (props) => {
             <ContentWrap>
                 <Title>Project</Title>
                 <Content>
-                    <LeftLine>
-                        <WhiteBack>
-                            <About>
-                                <PrjTitle>셈틀꾼 공식 홈페이지</PrjTitle>
+                    <About>
+                        <PrjTitle>셈틀꾼 공식 홈페이지</PrjTitle>
 
-                                <PrjContent>컴퓨터 공학과 학술 동아리 '셈틀꾼' 회원 전용 프로젝트  공고,게시,질문 사이트</PrjContent>
+                        <PrjContent>컴퓨터 공학과 학술 동아리 '셈틀꾼' 회원 전용 프로젝트  공고,게시,질문 사이트</PrjContent>
+                        <IconContainer>
+                            <IconWrap>
+                                <RiTeamFill size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt>15명(백앤드 담당)</IconTxt>
+                            </IconWrap>
+                            <IconWrap>
+                                <BiCalendar size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt>2020.07.04 ~ 2020.09.20</IconTxt>
+                            </IconWrap>
+                            <IconWrap>
+                                <FaHashtag size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt><Skill>Vue.js</Skill><Skill>Node.js</Skill><Skill>MongoDB</Skill>  </IconTxt>
+                            </IconWrap>
+                            <br></br>
+                            <IconWrap>
+                                <a href="http://sbmi.iptime.org/project/detail/5f6795042dd42431727251a3">
+                                    <BiLinkExternal size="1.5rem" /><IconTxt>   </IconTxt>
+                                </a>
+                                <a href="https://github.com/HwangYoonSeong/semtle-back">
+                                    <AiFillGithub size="1.5rem" /><IconTxt>   </IconTxt>
 
-                                <IconWrap>
-                                    <RiTeamFill size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt>15명(백앤드 담당)</IconTxt>
-                                </IconWrap>
-                                <IconWrap>
-                                    <BiCalendar size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt>2020.07.04 ~ 2020.09.20</IconTxt>
-                                </IconWrap>
-                                <IconWrap>
-                                    <FaHashtag size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt><Skill>Vue.js</Skill><Skill>Node.js</Skill><Skill>MongoDB</Skill>  </IconTxt>
-                                </IconWrap>
-                                <br></br>
-                                <IconWrap>
-                                    <a href="http://sbmi.iptime.org/project/detail/5f6795042dd42431727251a3">
-                                        <BiLinkExternal size="1.5rem" /><IconTxt>   </IconTxt>
-                                    </a>
-                                    <a href="https://github.com/HwangYoonSeong/semtle-back">
-                                        <AiFillGithub size="1.5rem" /><IconTxt>   </IconTxt>
+                                </a>
+                            </IconWrap>
+                        </IconContainer>
 
-                                    </a>
-                                </IconWrap>
-                            </About>
+                    </About>
 
-                            <Slick>
-                                <Slider {...settings}
-                                >
-                                    {items.map(item => {
-                                        return (
-                                            <div key={item.id}>
-                                                <ImageContainer>
-                                                    <PrjImage src={semtleggun} />
-                                                </ImageContainer>
-                                            </div>
-                                        );
-                                    })}
-                                </Slider>
+                    <Slick>
+                        <Slider {...settings}
+                        >
+                            {items.map(item => {
+                                return (
+                                    <div key={item.id}>
+                                        <ImageContainer>
+                                            <PrjImage src={semtleggun} />
+                                        </ImageContainer>
+                                    </div>
+                                );
+                            })}
+                        </Slider>
 
-                            </Slick>
-
-                        </WhiteBack>
-                    </LeftLine>
+                    </Slick>
 
 
 
