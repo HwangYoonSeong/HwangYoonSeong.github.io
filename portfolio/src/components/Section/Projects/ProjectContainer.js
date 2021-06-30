@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ProjectPresenter from './ProjectPresenter';
-import semtleggun from '../../../assets/semtleggun.png';
+import semtleggun from '../../../assets/semtle/semtleggun.png';
 import VuetickyNote from '../../../assets/VuetickyNote.png';
 
 class ProjectContainer extends Component {

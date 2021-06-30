@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import Slider from "react-slick";
-import semtleggun from '../../../assets/semtleggun.png';
+import semtleggun1 from '../../../assets/semtle/semtleggun.png';
+import semtleggun2 from '../../../assets/semtle/semtle2.png';
+import semtleggun3 from '../../../assets/semtle/semtle1.png';
 import { RiTeamFill } from "react-icons/ri";
 import { BiCalendar } from "react-icons/bi";
 import { FaHashtag } from "react-icons/fa";
@@ -32,12 +34,12 @@ const Content = styled.div`
     margin: 80px 0;
     display:flex;
     justify-content:center;
+    align-items:center;
     @media (max-width: 1124px) {
         display:block;
-        width:100%;
         padding:0px;
         margin:80px auto;
-        width:50%;
+        width:70%;
 
     }
 `;
@@ -62,12 +64,12 @@ const About = styled.div`
 `;
 
 const Slick = styled.div`
-    width: 480px;
+    width: 400px;
     z-index:1;
     @media (max-width: 1024px) {
         margin:50px auto;
         padding:10px;
-        width:80%;
+        width:100%;
     }
        
 `;
@@ -169,35 +171,12 @@ const Skill = styled.span`
   color:white;
 `
 
-
-const SampleNextArrow = (props) => {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className}
-            style={{ ...style, display: "block", color: "black" }}
-            onClick={onClick}
-        />
-    );
-}
-
-const SamplePrevArrow = (props) => {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className}
-            style={{ ...style, display: "block", color: "black " }}
-            onClick={onClick}
-        />
-    );
-}
-
 //const imgUrl = require(semtleggun);
 const ProjectPresenter = (props) => {
     const items = [
-        { id: 1, url: semtleggun },
-        { id: 2, url: semtleggun },
-        { id: 3, url: semtleggun },
+        { id: 1, url: semtleggun1 },
+        { id: 2, url: semtleggun2 },
+        { id: 3, url: semtleggun3 },
     ];
 
     const settings = {
@@ -208,8 +187,7 @@ const ProjectPresenter = (props) => {
         autoplay: true,
         autoplaySpeed: 4000,
         slidesToScroll: 1,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />
+        arrows: false
     };
 
     return (
@@ -252,7 +230,7 @@ const ProjectPresenter = (props) => {
                                 return (
                                     <div key={item.id}>
                                         <ImageContainer>
-                                            <PrjImage src={semtleggun} />
+                                            <PrjImage src={item.url} />
                                         </ImageContainer>
                                     </div>
                                 );

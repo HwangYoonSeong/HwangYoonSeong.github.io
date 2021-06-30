@@ -138,8 +138,8 @@ const About = () => {
                                     </ItemIcon>
                                     <Itemtxt>
                                         <ItemTitle>Birthday : </ItemTitle>
-                                April 4, 1997
-                            </Itemtxt>
+                                        April 4, 1997
+                                    </Itemtxt>
                                 </ProfileItem>
                                 <ProfileItem>
                                     <ItemIcon>
@@ -147,8 +147,8 @@ const About = () => {
                                     </ItemIcon>
                                     <Itemtxt>
                                         <ItemTitle>Phone : </ItemTitle>
-                                +82 010 2222 3333
-                            </Itemtxt>
+                                        +82 010 2222 3333
+                                    </Itemtxt>
                                 </ProfileItem>
                                 <ProfileItem>
                                     <ItemIcon>
@@ -167,7 +167,7 @@ const About = () => {
                                         <ItemTitle>Github : </ItemTitle>
                                         <ItemLink href="https://github.com/HwangYoonSeong">
                                             https://github.com/HwangYoonSeong
-                            </ItemLink>
+                                        </ItemLink>
 
                                     </Itemtxt>
                                 </ProfileItem>
@@ -175,10 +175,12 @@ const About = () => {
                         </ProfileText>
                     </Profile>
                     <MyIntro>
-                        <div> <h2>The devil is in the detail</h2> <br />
-                    그럴싸해 보이는 웹사이트가 아닌 완벽함을 추구합니다.<br />
-                    작은 요소 하나하나까지 기꺼이 시간과 노력을 쏟아 부울수 있는<br />
-                        열정적인 개발자입니다.
+                        <div> <p style={{ fontSize: "25px", fontWeight: "bold" }}>차분하게 치열하게 겸손하게</p> <br />
+                            어떤 일이든 동요하지 않고 차분하게<br />
+                            안주하지 않고 누구보다 치열하게<br />
+                            항상 배울 수 있도록 낮은 자세로 겸손하게<br />
+                            일할 수 있는 개발자가 되기 위해 노력하고 있습니다. <br /><br />
+                            저에 대해 궁금하신 점이 있다면, 위의 주소로 연락주세요!!!
                         </div>
                     </MyIntro>
                 </Content></ContentWrap>
