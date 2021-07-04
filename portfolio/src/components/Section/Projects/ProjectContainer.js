@@ -30,7 +30,7 @@ class ProjectContainer extends Component {
                 title: "Vueticky Note",
                 url: "https://vueticky-note-b08f1.web.app/",
                 git: "https://github.com/HwangYoonSeong/VuetickyNote/tree/master/vue-note-app",
-                txt: "Vue를 사용한 메모앱. 이미지 등록 시 tensorflow.js를 통한 이미지 객체 인식을 통해 자동 태그 기능 개발",
+                txt: " Vue를 사용한 메모앱. 이미지 등록 시 tensorflow.js를 통한 이미지 객체 인식을 통해 \n자동 태그 기능 개발",
                 period: "2020.09.09 ~ 2020.12.07",
                 developers: "2명",
                 img: [Vueticky1, Vueticky2, Vueticky3],
@@ -39,7 +39,7 @@ class ProjectContainer extends Component {
             {
                 title: "YoucandoEAT",
                 git: "https://github.com/HwangYoonSeong/You_can_do_EAT",
-                txt: "OCR 및 번역 기능을 사용하여 외국인이 음식 선별 시 발생할 수 있는 언어 소통 문제를 해결하는 음식 정보 제공 웹앱",
+                txt: " OCR 및 번역 기능을 사용하여 외국인이 음식 선별 시 발생할 수 있는 언어 소통 문제를 해결하는 \n음식 정보 제공 웹앱",
                 period: "2021.03.13 ~ 2021.06.27",
                 developers: "2명",
                 img: [ycde1, ycde2, ycde3, ycde4],

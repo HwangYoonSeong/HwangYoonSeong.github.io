@@ -33,13 +33,13 @@ const Content = styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
-    border-bottom:2px solid #27ae60;
+    border-bottom:2px solid #d3f9d8;
     @media (max-width: 1124px) {
         display:block;
         padding:0px;
         margin:80px auto;
         width:70%;
-        border-bottom:2px solid #27ae60;
+        border-bottom:2px solid #d3f9d8;
         
 
     }
@@ -133,7 +133,7 @@ const PrjImage = styled.img`
 `;
 
 const PrjTitle = styled.p`
-    font-size: 20px;
+    font-size: 30px;
     font-weight:bold;
     
 `
@@ -156,7 +156,9 @@ const IconWrap = styled.div`
     
 `
 
-const PrjContent = styled.p`
+const PrjContent = styled.pre`
+    line-height:20px;
+    font-size: 15px;
     margin:40px 0;
     font-weight:bold;
 `
