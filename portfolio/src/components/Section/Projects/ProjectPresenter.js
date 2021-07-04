@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Slider from "react-slick";
-import semtleggun1 from '../../../assets/semtle/semtleggun.png';
-import semtleggun2 from '../../../assets/semtle/semtle2.png';
-import semtleggun3 from '../../../assets/semtle/semtle1.png';
+
 import { RiTeamFill } from "react-icons/ri";
 import { BiCalendar } from "react-icons/bi";
 import { FaHashtag } from "react-icons/fa";
@@ -31,15 +29,18 @@ const Title = styled.p`
 
 const Content = styled.div`
 
-    margin: 80px 0;
+    margin: 80px 80px 150px 80px;
     display:flex;
     justify-content:center;
     align-items:center;
+    border-bottom:2px solid #27ae60;
     @media (max-width: 1124px) {
         display:block;
         padding:0px;
         margin:80px auto;
         width:70%;
+        border-bottom:2px solid #27ae60;
+        
 
     }
 `;
@@ -48,24 +49,23 @@ const Content = styled.div`
 
 
 const About = styled.div`
-    padding:10px;
-    margin-right:10%;
+    width:50%;
+    margin-left:7%;
+    margin-bottom:80px;
     @media (max-width: 1024px) {
-        padding:0px;
-        margin-right:0%;
         text-align:center;
         display:flex;
         flex-direction:column;
         align-items:center;
-        
+        margin:0 auto;
+        margin-bottom:100px;
 }
-
-
 `;
 
 const Slick = styled.div`
-    width: 400px;
+    width: 50%;
     z-index:1;
+    margin-bottom:80px;
     @media (max-width: 1024px) {
         margin:50px auto;
         padding:10px;
@@ -129,8 +129,7 @@ const ImageContainer = styled.div`
 `;
 
 const PrjImage = styled.img`
-    width:100%;
- 
+   width:100%;
 `;
 
 const PrjTitle = styled.p`
@@ -173,11 +172,6 @@ const Skill = styled.span`
 
 //const imgUrl = require(semtleggun);
 const ProjectPresenter = (props) => {
-    const items = [
-        { id: 1, url: semtleggun1 },
-        { id: 2, url: semtleggun2 },
-        { id: 3, url: semtleggun3 },
-    ];
 
     const settings = {
         dots: true,
@@ -185,7 +179,7 @@ const ProjectPresenter = (props) => {
         speed: 500,
         slidesToShow: 1,
         autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 3000,
         slidesToScroll: 1,
         arrows: false
     };
@@ -194,55 +188,71 @@ const ProjectPresenter = (props) => {
         <Container id="Project">
             <ContentWrap>
                 <Title>Project</Title>
-                <Content>
-                    <About>
-                        <PrjTitle>셈틀꾼 공식 홈페이지</PrjTitle>
 
-                        <PrjContent>컴퓨터 공학과 학술 동아리 '셈틀꾼' 회원 전용 프로젝트  공고,게시,질문 사이트</PrjContent>
-                        <IconContainer>
-                            <IconWrap>
-                                <RiTeamFill size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt>15명(백앤드 담당)</IconTxt>
-                            </IconWrap>
-                            <IconWrap>
-                                <BiCalendar size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt>2020.07.04 ~ 2020.09.20</IconTxt>
-                            </IconWrap>
-                            <IconWrap>
-                                <FaHashtag size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt><Skill>Vue.js</Skill><Skill>Node.js</Skill><Skill>MongoDB</Skill>  </IconTxt>
-                            </IconWrap>
-                            <br></br>
-                            <IconWrap>
-                                <a href="http://sbmi.iptime.org/project/detail/5f6795042dd42431727251a3">
-                                    <BiLinkExternal size="1.5rem" /><IconTxt>   </IconTxt>
-                                </a>
-                                <a href="https://github.com/HwangYoonSeong/semtle-back">
-                                    <AiFillGithub size="1.5rem" /><IconTxt>   </IconTxt>
+                {props.projects.map((prj, idx) => {
+                    return (
+                        <Content key={idx}>
 
-                                </a>
-                            </IconWrap>
-                        </IconContainer>
+                            <Slick>
+                                <Slider {...settings}
+                                >
+                                    {prj.img.map((img, idx) => {
+                                        return (
+                                            <div key={idx}>
+                                                <ImageContainer>
+                                                    <PrjImage src={img} />
+                                                </ImageContainer>
+                                            </div>
+                                        );
+                                    })}
+                                </Slider>
 
-                    </About>
+                            </Slick>
 
-                    <Slick>
-                        <Slider {...settings}
-                        >
-                            {items.map(item => {
-                                return (
-                                    <div key={item.id}>
-                                        <ImageContainer>
-                                            <PrjImage src={item.url} />
-                                        </ImageContainer>
-                                    </div>
-                                );
-                            })}
-                        </Slider>
+                            <About>
+                                <PrjTitle>{prj.title}</PrjTitle>
 
-                    </Slick>
+                                <PrjContent>{prj.txt}</PrjContent>
+                                <IconContainer>
+                                    <IconWrap>
+                                        <RiTeamFill size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt>{prj.developers}</IconTxt>
+                                    </IconWrap>
+                                    <IconWrap>
+                                        <BiCalendar size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt>{prj.period}</IconTxt>
+                                    </IconWrap>
+                                    <IconWrap>
+                                        <FaHashtag size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} />
+                                        <IconTxt>
+                                            {prj.skills.map((skill, idx) => {
+                                                return (
+                                                    <Skill key={idx}>{skill}</Skill>
+                                                );
+                                            })}
+
+                                        </IconTxt>
+                                    </IconWrap>
+                                    <br></br>
+                                    <IconWrap>
+                                        {prj.url ? (<a href={prj.url}>
+                                            <BiLinkExternal size="1.5rem" /><IconTxt>   </IconTxt>
+                                        </a>) : null}
+
+                                        <a href={prj.git}>
+                                            <AiFillGithub size="1.5rem" /><IconTxt>   </IconTxt>
+
+                                        </a>
+                                    </IconWrap>
+                                </IconContainer>
+
+                            </About>
 
 
 
+                        </Content>
+                    );
+                })}
 
-                </Content>
+
 
             </ContentWrap>
         </Container >
