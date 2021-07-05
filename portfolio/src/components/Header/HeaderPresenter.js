@@ -74,7 +74,7 @@ const Item = styled.li`
     height:100%;
     border-bottom: 3px solid ${props => props.current ? "#27ae60" : "transparent"};
     transition: border-bottom .2s ease-in;
-    
+   color: ${props => props.current ? "#27ae60" : ''};
     &:hover{
         color: #27ae60;
     }
@@ -85,7 +85,8 @@ const Item = styled.li`
         display:block;
         width: 100%;
         border-bottom: none;
-        background-color: #fff;
+        background-color: rgb(0,0,0,0.6);
+        background-opacity:0.33;
         text-align:center;
         &:hover{
             color:#fff;
@@ -101,6 +102,17 @@ const Link = styled.a`
     height:100%;
     align-items:center;
     justify-content:center;
+   
+    &:hover{
+        text-decoration: none;
+        color:#27ae60;
+    }
+    @media (max-width: 994px){
+        &:hover{
+            color:#fff;
+        }
+    }
+
 `;
 //NavList 가리기 용
 const MobCover = styled.div`

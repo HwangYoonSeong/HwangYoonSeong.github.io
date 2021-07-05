@@ -29,9 +29,9 @@ const Title = styled.p`
 
 const Content = styled.div`
 
-    margin: 80px 80px 150px 80px;
+    margin: 80px 80px 0 80px;
     display:flex;
-    justify-content:center;
+    justify-content:space-between;
     align-items:center;
     border-bottom:2px solid #d3f9d8;
     @media (max-width: 1124px) {
@@ -132,9 +132,11 @@ const PrjImage = styled.img`
    width:100%;
 `;
 
-const PrjTitle = styled.p`
+const PrjTitle = styled.pre`
     font-size: 30px;
     font-weight:bold;
+    overflow-y:hidden;
+    overflow-x:hidden;
     
 `
 const IconTxt = styled.span`
@@ -161,6 +163,8 @@ const PrjContent = styled.pre`
     font-size: 15px;
     margin:40px 0;
     font-weight:bold;
+    overflow-y:hidden;
+    overflow-x:hidden;
 `
 
 const Skill = styled.span`

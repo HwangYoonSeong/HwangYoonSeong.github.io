@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PROFILE from '../../assets/Profile.png';
+import PROFILE from '../../assets/profile.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
