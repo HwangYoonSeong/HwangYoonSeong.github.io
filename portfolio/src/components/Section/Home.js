@@ -84,7 +84,6 @@ const Home = () => {
         typingTxt = typingTxt.split(""); // 한글자씩 자른다. 
         if (typingBool === false) { // 타이핑이 진행되지 않았다면 
             typingBool = true;
-            console.log(typingTxt.length);
             var tyInt = setInterval(typing, 100); // 반복동작 
 
         }

@@ -4,7 +4,6 @@ import Slider from "react-slick";
 
 import { RiTeamFill } from "react-icons/ri";
 import { BiCalendar } from "react-icons/bi";
-import { FaHashtag } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
 import { AiFillGithub } from "react-icons/ai";
 
@@ -34,7 +33,7 @@ const Content = styled.div`
     justify-content:space-between;
     align-items:center;
     border-bottom:2px solid #d3f9d8;
-    @media (max-width: 1124px) {
+    @media (max-width: 1024px) {
         display:block;
         padding:0px;
         margin:80px auto;
@@ -53,10 +52,10 @@ const About = styled.div`
     margin-left:7%;
     margin-bottom:80px;
     @media (max-width: 1024px) {
+        width:100%;
         text-align:center;
         display:flex;
         flex-direction:column;
-        align-items:center;
         margin:0 auto;
         margin-bottom:100px;
 }
@@ -132,12 +131,9 @@ const PrjImage = styled.img`
    width:100%;
 `;
 
-const PrjTitle = styled.pre`
+const PrjTitle = styled.p`
     font-size: 30px;
     font-weight:bold;
-    overflow-y:hidden;
-    overflow-x:hidden;
-    
 `
 const IconTxt = styled.span`
     display:inline-block;
@@ -158,23 +154,35 @@ const IconWrap = styled.div`
     
 `
 
-const PrjContent = styled.pre`
+const PrjContent = styled.p`
     line-height:20px;
     font-size: 15px;
     margin:40px 0;
     font-weight:bold;
-    overflow-y:hidden;
-    overflow-x:hidden;
+   
 `
 
-const Skill = styled.span`
+const SkillList = styled.ul`
+display: grid;
+grid-template-columns: repeat(6,1fr);
+
+@media(max-width: 400px) {
+    grid-template-columns: repeat(2, 1fr);
+ }
+
+`
+const Skill = styled.li`
   font-weight:bold;
   background:  #27ae60;
   margin:10px;
   border-radius:50px;
   padding:10px;
   color:white;
+  text-align:center;
+
 `
+
+
 
 //const imgUrl = require(semtleggun);
 const ProjectPresenter = (props) => {
@@ -227,15 +235,14 @@ const ProjectPresenter = (props) => {
                                         <BiCalendar size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} /><IconTxt>{prj.period}</IconTxt>
                                     </IconWrap>
                                     <IconWrap>
-                                        <FaHashtag size="1.5rem" style={{ display: "inline-block", color: "#27ae60" }} />
-                                        <IconTxt>
+                                        <SkillList>
                                             {prj.skills.map((skill, idx) => {
                                                 return (
                                                     <Skill key={idx}>{skill}</Skill>
                                                 );
                                             })}
+                                        </SkillList>
 
-                                        </IconTxt>
                                     </IconWrap>
                                     <br></br>
                                     <IconWrap>

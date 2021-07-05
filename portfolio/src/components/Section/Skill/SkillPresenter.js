@@ -35,7 +35,8 @@ const SkillList = styled.ul`
         grid-template-columns: repeat(3, 200px);
     }
     @media(max-width: 743px) {
-        grid-template-columns: repeat(2, 200px);
+        grid-gap: 0px;
+        grid-template-columns: repeat(2, 180px);
      }
     
 `;
